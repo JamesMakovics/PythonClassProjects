@@ -1,24 +1,20 @@
 import RPi.GPIO as GPIO
 import time
+GPIO.setmode(GPIO.BCM)
 
-GPIO.setmode(GPIO.BOARD)
-
-Motor1A = 16
-Motor1B = 18
-Motor1E = 22
+Motor1A = 17
+Motor1B = 27
 
 GPIO.setup(Motor1A, GPIO.OUT)
 GPIO.setup(Motor1B, GPIO.OUT)
-GPIO.setup(Motor1E, GPIO.OUT)
 
 print("Testing motor")
-GPIO.output(Motor1A, GPIO.HIGH)
-GPIO.output(Motor1B, GPIO.LOW)
-GPIO.output(Motor1E, GPIO.HIGH)
+GPIO.output(Motor1A, True)#Sets right motor to true/on
+GPIO.output(Motor1B, False)#Sets left motor to false/off
 
-sleep(2)
+time.sleep(2)#Waits for 2 seconds
 
 print("Stopping Test")
-GPIO.output(Motor1E, GPIO.LOW)
+GPIO.output(Motor1A, False)#Turns right motor off
 
 GPIO.cleanup()
