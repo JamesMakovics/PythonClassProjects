@@ -82,7 +82,7 @@ try:
             Left()
             print("LEFT")
         elif char == curses.KEY_RIGHT:
-            right()
+            Right()
             print("RIGHT")
         elif char == ord('s'):
             Stop()
