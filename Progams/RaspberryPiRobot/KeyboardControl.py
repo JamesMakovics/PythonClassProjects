@@ -28,7 +28,7 @@ GPIO.setup(MotorRightBackward, GPIO.OUT)
 screen = curses.initscr()
 curses.noecho()
 curses.cbreak()
-sceen.keypad(True)
+srceen.keypad(True)
 
 try:
     while True:
