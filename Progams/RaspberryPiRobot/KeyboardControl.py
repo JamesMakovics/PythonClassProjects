@@ -28,7 +28,7 @@ GPIO.setup(MotorRightBackward, GPIO.OUT)
 screen = curses.initscr()
 curses.noecho()
 curses.cbreak()
-srceen.keypad(True)
+screen.keypad(True)
 
 def init(): #sets all the motors to off
     GPIO.output(MotorLeftForward, False)
