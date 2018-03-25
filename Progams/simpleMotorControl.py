@@ -5,8 +5,8 @@ GPIO.setmode(GPIO.BCM)
 '''
 Set GPIO pins in BCM mode on Raspberry Pi 3
 '''
-MotorLeftForward = 17 #in pin 11 on RPI 3
-MotorLeftBackward = 27 #in pin 13 on RPI 3
+MotorLeftBackward = 17 #in pin 11 on RPI 3
+MotorLeftForward = 27 #in pin 13 on RPI 3
 MotorRightForward = 22 #in pin 15 on RPI 3
 MotorRightBackward = 23 #in pin 16 on RPI 3
 '''
