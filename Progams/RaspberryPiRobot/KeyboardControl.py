@@ -30,40 +30,62 @@ curses.noecho()
 curses.cbreak()
 srceen.keypad(True)
 
+def init(): #sets all the motors to off
+    GPIO.output(MotorLeftForward, False)
+    GPIO.output(MotorRightForward, False)
+    GPIO.output(MotorLeftBackward, False)
+    GPIO.output(MotorRightBackward, False)
+
+def Forward():#makes the robot go forward
+    GPIO.output(MotorLeftForward, True)
+    GPIO.output(MotorRightForward, True)
+    GPIO.output(MotorLeftBackward, False)
+    GPIO.output(MotorRightBackward, False)
+
+def Backward():#makes the robot go backwards
+    GPIO.output(MotorLeftForward, False)
+    GPIO.output(MotorRightForward, False)
+    GPIO.output(MotorLeftBackward, True)
+    GPIO.output(MotorRightBackward, True)
+
+def Left():#makes the robot go left
+    GPIO.output(MotorLeftForward, True)
+    GPIO.output(MotorRightForward, False)
+    GPIO.output(MotorLeftBackward, False)
+    GPIO.output(MotorRightBackward, False)
+
+def Right():#makes the robot go right
+    GPIO.output(MotorLeftForward, False)
+    GPIO.output(MotorRightForward, True)
+    GPIO.output(MotorLeftBackward, False)
+    GPIO.output(MotorRightBackward, False)
+
+def Stop():#makes the robot motors stop
+    GPIO.output(MotorLeftForward, False)
+    GPIO.output(MotorRightForward, False)
+    GPIO.output(MotorLeftBackward, False)
+    GPIO.output(MotorRightBackward, False)
+
+init() #turns motors off from previous run
 try:
     while True:
         char = screen.getch()
         if char == ord('q'): #Quits the program
             break
         elif char == curses.KEY_UP: #Moves Robot forward
-            GPIO.output(MotorLeftForward, True)
-            GPIO.output(MotorRightForward, True)
-            GPIO.output(MotorLeftBackward, False)
-            GPIO.output(MotorRightBackward, False)
-            print("UP")
+            Forward()
+            print("FORWARD")
         elif char == curses.KEY_DOWN:
-            GPIO.output(MotorLeftForward, False)
-            GPIO.output(MotorRightForward, False)
-            GPIO.output(MotorLeftBackward, True)
-            GPIO.output(MotorRightBackward, True)
-            print("DOWN")
+            Backward()
+            print("BACKWARD")
         elif char == curses.KEY_LEFT:
-            GPIO.output(MotorLeftForward, True)
-            GPIO.output(MotorRightForward, False)
-            GPIO.output(MotorLeftBackward, False)
-            GPIO.output(MotorRightBackward, False)
+            Left()
             print("LEFT")
         elif char == curses.KEY_RIGHT:
-            GPIO.output(MotorLeftForward, False)
-            GPIO.output(MotorRightForward, True)
-            GPIO.output(MotorLeftBackward, False)
-            GPIO.output(MotorRightBackward, False)
+            right()
             print("RIGHT")
         elif char == ord('s'):
-            GPIO.output(MotorLeftForward, False)
-            GPIO.output(MotorRightForward, False)
-            GPIO.output(MotorLeftBackward, False)
-            GPIO.output(MotorRightBackward, False)
+            Stop()
             print("STOP")
 finally:
     #Close down curses properly,inc turn echo back on!
