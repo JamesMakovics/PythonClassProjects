@@ -59,7 +59,7 @@ try:
             GPIO.output(MotorLeftBackward, False)
             GPIO.output(MotorRightBackward, False)
             print("RIGHT")
-        elif char == curses.KEY_STAB:
+        elif char == ord('s'):
             GPIO.output(MotorLeftForward, False)
             GPIO.output(MotorRightForward, False)
             GPIO.output(MotorLeftBackward, False)
