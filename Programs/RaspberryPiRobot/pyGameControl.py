@@ -42,13 +42,13 @@ def Backward():#makes the robot go backwards
     GPIO.output(MotorLeftBackward, True)
     GPIO.output(MotorRightBackward, True)
 
-def Left():#makes the robot go left
+def Right():#makes the robot go left
     GPIO.output(MotorLeftForward, True)
     GPIO.output(MotorRightForward, False)
     GPIO.output(MotorLeftBackward, False)
     GPIO.output(MotorRightBackward, False)
 
-def Right():#makes the robot go right
+def Left():#makes the robot go right
     GPIO.output(MotorLeftForward, False)
     GPIO.output(MotorRightForward, True)
     GPIO.output(MotorLeftBackward, False)
@@ -82,7 +82,7 @@ try:
                     Left()
                 elif event.key == pygame.K_RIGHT:
                     Right()
-                else:
-                    stop()
             else:
-                stop()
+                Stop()
+finally:
+    GPIO.cleanup()
