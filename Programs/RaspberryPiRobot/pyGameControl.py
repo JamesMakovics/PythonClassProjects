@@ -61,7 +61,7 @@ def Stop():#makes the robot motors stop
     GPIO.output(MotorRightBackward, False)
 
 pygame.init()
-screen = pygame.display.set_mode((480,500))
+screen = pygame.display.set_mode((480,320))
 pygame.display.set_caption("Robot Driverstation")
 init() #turns motors off from previous run
 
