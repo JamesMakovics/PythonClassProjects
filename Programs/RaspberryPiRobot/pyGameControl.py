@@ -62,24 +62,27 @@ def Stop():#makes the robot motors stop
 
 pygame.init()
 screen = pygame.display.set_mode((480,500))
-
+pygame.display.set_caption("Robot Driverstation")
 init() #turns motors off from previous run
 
 try:
     while True:
-        keys = pygame.key.get_pressed()  #checking pressed keys
-        if keys[pygame.K_ESCAPE]: #Quits the program
-            break
-        elif keys[pygame.K_UP]: #Moves Robot forward
-            Forward()
-        elif keys[pygame.K_DOWN]: #Moves Robot Backwards
-            Backward()
-        elif keys[pygame.K_LEFT]:
-            Left()
-        elif keys[pygame.K_RIGHT]:
-            Right()
-        else:
-            Stop()
-finally:
-    #Close program
-    GPIO.cleanup()
+        events = pygame.event.get()
+        for event in events:
+            if event.type == pygame.QUIT:
+                GPIO.cleanup()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE: #Quits the program
+                    break
+                elif event.key == pygame.K_UP: #Moves Robot forward
+                    Forward()
+                elif event.key == pygame.K_DOWN: #Moves Robot Backwards
+                    Backward()
+                elif event.key == pygame.K_LEFT:
+                    Left()
+                elif event.key == pygame.K_RIGHT:
+                    Right()
+                else:
+                    stop()
+            else:
+                Stop()
