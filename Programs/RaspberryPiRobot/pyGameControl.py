@@ -64,7 +64,15 @@ pygame.init()
 screen = pygame.display.set_mode((480,320))
 pygame.display.set_caption("Robot Driverstation")
 init() #turns motors off from previous run
-
+print('Welcome to the test Driverstation')
+print("Controls:")
+print("Up Arrow -> moves robot forward")
+print("Down Arrow -> moves robot backward")
+print("Left Arrow -> moves robot left")
+print("Right Arrow -> moves robot right")
+print()
+print()
+print("When exiting the program you must close the idle run in-order to shutdown!")
 try:
     while True:
         events = pygame.event.get()
