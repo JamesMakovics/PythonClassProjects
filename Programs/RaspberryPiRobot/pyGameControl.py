@@ -61,14 +61,10 @@ def Stop():#makes the robot motors stop
     GPIO.output(MotorRightBackward, False)
 
 pygame.init()
-pygame.font.init() # you have to call this at the start,
-                   # if you want to use this module.
 myfont = pygame.font.SysFont('Comic Sans MS', 30)
 screen = pygame.display.set_mode((480,320))
 pygame.display.set_caption("Robot Driverstation")
 init() #turns motors off from previous run
-welcomeText = myfont.render('Welcome to the test Driverstation', False, (0, 0, 0))
-screen.blit(WelcomeText,(0,0))
 print('Welcome to the test Driverstation')
 print("Controls:")
 print("Up Arrow -> moves robot forward")
