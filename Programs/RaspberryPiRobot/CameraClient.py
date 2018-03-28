@@ -34,7 +34,7 @@ while True:
 
 #Convert image
   try:
-    image = Image.fromstring("RGB",(120,90),data)
+    image = Image.fromstring("RGB",(320,240),data)
     image = image.resize((320,240))
     image = pygame.image.frombuffer(image.tostring(),(320,240),"RGB")
 
@@ -42,6 +42,6 @@ while True:
   except:
     image = previousImage
   output = image
-  screen.Surface(output,(0,0))
+  screen.blit(output,(0,0))
   clock.tick(60)
   pygame.display.flip()
