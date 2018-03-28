@@ -42,6 +42,6 @@ while True:
   except:
     image = previousImage
   output = image
-  screen.blit(output,(0,0))
+  screen.Surface(output,(0,0))
   clock.tick(60)
   pygame.display.flip()
