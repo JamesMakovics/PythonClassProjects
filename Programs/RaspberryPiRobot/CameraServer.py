@@ -6,7 +6,7 @@ from pygame.locals import *
 
 #Create server:
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(("192.168.2.100",5000))
+server.bind(("192.168.1.30",5000))
 server.listen(5)
 
 #Start Pygame
