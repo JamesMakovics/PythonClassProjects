@@ -64,6 +64,12 @@ pygame.init()
 screen = pygame.display.set_mode((480,320))
 pygame.display.set_caption("Robot Driverstation")
 init() #turns motors off from previous run
+print('Welcome to the test Driverstation')
+print("Controls:")
+print("Up Arrow -> moves robot forward")
+print("Down Arrow -> moves robot backward")
+print("Left Arrow -> moves robot left")
+print("Right Arrow -> moves robot right")
 
 try:
     while True:
@@ -71,6 +77,8 @@ try:
         for event in events:
             if event.type == pygame.QUIT:
                 GPIO.cleanup()
+                pygame.display.quit()
+                pygame.quit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE: #Quits the program
                     break
