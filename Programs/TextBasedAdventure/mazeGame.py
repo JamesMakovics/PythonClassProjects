@@ -9,7 +9,7 @@ incorrectStepsForMaze = []
 motorSpeedsForIncorrectSteps = []
 
 mathQuestions = ["Whats 9+10?","Find the value of 3x+9=0","What is the factor of 3x^2+6x+3","","",""]
-mathAnswers = []
+mathAnswers = [21,3,]
 
 scienceQuestions = []
 scienceAnswers = []
