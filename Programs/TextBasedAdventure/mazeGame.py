@@ -8,7 +8,7 @@ motorSpeedsForCorrectSteps[]
 incorrectStepsForMaze = []
 motorSpeedsForIncorrectSteps = []
 
-mathQuestions = []
+mathQuestions = ["Whats 9+10?","Find the value of 3x+9=0","What is the factor of 3x^2+6x+3","","",""]
 mathAnswers = []
 
 scienceQuestions = []
@@ -45,4 +45,4 @@ def checkStep(stepsForMaze,incorrectStepsForMaze,motorSpeedsForCorrectSteps,moto
         return incorrectStepsForMaze[stepNum], motorSpeedsForIncorrectSteps[stepNum]
 
 def getStep():
-    connectToPi.sendStep(validateQuestion()))
+    runMotors.sendStep(validateQuestion()))

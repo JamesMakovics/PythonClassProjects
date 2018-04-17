@@ -36,7 +36,7 @@ def Forward(methodTimeout, speed):#makes the robot go forward
     GPIO.output(MotorRightBackward, False)
     time.sleep(methodTimeout)
     Stop()
-
+    return True
 
 def Backward(methodTimeout, speed):#makes the robot go backwards
     GPIO.output(MotorLeftForward, False)
@@ -45,6 +45,7 @@ def Backward(methodTimeout, speed):#makes the robot go backwards
     GPIO.output(MotorRightBackward, True)
     time.sleep(methodTimeout)
     Stop()
+    return True
 
 def Right(methodTimeout, speed):#makes the robot go left
     GPIO.output(MotorLeftForward, True)
@@ -53,6 +54,7 @@ def Right(methodTimeout, speed):#makes the robot go left
     GPIO.output(MotorRightBackward, False)
     time.sleep(methodTimeout)
     Stop()
+    return True
 
 def Left(methodTimeout, speed):#makes the robot go right
     GPIO.output(MotorLeftForward, False)
@@ -61,6 +63,7 @@ def Left(methodTimeout, speed):#makes the robot go right
     GPIO.output(MotorRightBackward, False)
     time.sleep(methodTimeout)
     Stop()
+    return True
 
 def Stop():#makes the robot motors stop
     GPIO.output(MotorLeftForward, False)
@@ -68,6 +71,6 @@ def Stop():#makes the robot motors stop
     GPIO.output(MotorLeftBackward, False)
     GPIO.output(MotorRightBackward, False)
     hasFinished()
-    
+
 def hasFinished():
     return True
