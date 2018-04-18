@@ -6,7 +6,7 @@ import time
 stepNum = 0
 incorrectCount = 0
 
-stepsForMaze = [1] #Just a place holder
+stepsForMaze = ["forward"] #Just a place holder
 motorTimeForSteps = [1,1] #Just a place holder
 
 
