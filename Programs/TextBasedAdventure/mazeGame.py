@@ -84,17 +84,17 @@ def validateQuestion(userAnswer,answer,incorrectCount):
 
 def checkStep(stepsForMaze,motorTimeForSteps):
     step = stepsForMaze[stepNum]
-    time =  motorTimeForCorrectSteps[stepNum]
+    time =  motorTimeForSteps[stepNum]
     sendMotorMethods(step,time,stepNum)
 
 def sendMotorMethods(step,time,stepNum):
-    UDP_IP = "127.0.0.1"
-    UDP_PORT = 5005
-
+    UDP_IP = "192.168.1.30" #This is the ip of the Pi
+    UDP_PORT = 5005 #This is the port it connects over
+    address = UDP_IP, UDP_PORT
     sock = socket.socket(socket.AF_INET, # Internet
                      socket.SOCK_DGRAM) # UDP
-    sock.sendto(step)
-    sock.sendto(time)
+    sock.sendto(str(step).encode('utf-8'), address)
+    sock.sendto(str(time).encode('utf-8'), address)
     data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
 
     if data == "Finished":
