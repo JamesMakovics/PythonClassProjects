@@ -95,9 +95,6 @@ def sendMotorMethods(step,time,stepNum):
                      socket.SOCK_DGRAM) # UDP
     sock.sendto(str(step).encode('utf-8'), address)
     sock.sendto(str(time).encode('utf-8'), address)
-    data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
 
-    if data == "Finished":
-        stepNum += 1
-        displayQuestion(choice,mathQuestions,scienceQuestions,englishQuestions)
+    displayQuestion(choice,mathQuestions,scienceQuestions,englishQuestions)
 intro()
