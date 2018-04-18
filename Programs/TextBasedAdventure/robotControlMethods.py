@@ -1,4 +1,10 @@
 #This manages the Pi from the server side
+'''
+imports
+'''
+import RPi.GPIO as GPIO
+import time
+GPIO.setmode(GPIO.BCM)
 
 def init(): #sets all the motors to off
     GPIO.output(MotorLeftForward, False)
