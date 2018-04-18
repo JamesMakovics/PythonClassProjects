@@ -2,16 +2,16 @@
 import pygame
 import socket
 import random
+import time
 stepNum = 0
+incorrectCount = 0
 
-stepsForMaze = [1,1]
-motorTimeForCorrectSteps = [1,1]
+stepsForMaze = [1] #Just a place holder
+motorTimeForSteps = [1,1] #Just a place holder
 
-incorrectStepsForMaze = [1,1]
-motorTimeForIncorrectSteps = [1,1]
 
 mathQuestions = ["Whats 9+10?","Find the value of 3x+9=0","What is the factor of 3x^2+6x+3","","",""]
-mathAnswers = [21,3,]
+mathAnswers = ["21","3",]
 
 scienceQuestions = [1,1]
 scienceAnswers = [1,1]
@@ -41,43 +41,53 @@ def intro():
     print("English")
     while True:
         choice = str(input("Please enter a topic: "))
-        choice = choice.lower()
-        if choice != "science" or "math" or "english":
-            print("Please enter: \nMath\nScience\nEnglish")
+        print(choice)
+        if choice == "science" or "math" or "english":
+            break
         else:
-            False
+            print()
+            print("Please enter: \nMath\nScience\nEnglish")
+
     displayQuestion(choice,mathQuestions,scienceQuestions,englishQuestions)
 
 def displayQuestion(choice,mathQuestions,scienceQuestions,englishQuestions):
+    print()
+    randNum = random.randint(0,0)
     if choice == "science":
-        question = scienceQuestions[random.randint(0,26)]
+        question = scienceQuestions[randNum]
+        answer = scienceAnswers[randNum]
     if choice == "math":
-        question = mathQuestions[random.randint(0,26)]
+        question = mathQuestions[randNum]
+        answer = mathAnswers[randNum]
     if choice == "english":
-        question = englishQuestions[random.randint(0,26)]
+        question = englishQuestions[randNum]
+        answer = englishAnswers[randNum]
 
     for x in range (0,5):
         b = "Your question is" + "." * x
-        print (b, end="\r")
+        print(b, end="\r")
         time.sleep(1)
-    print(question)
+    print()
+    userAnswer = str(input(question + ": "))
+    validateQuestion(userAnswer,answer,incorrectCount)
 
-#def validateQuestion():
+def validateQuestion(userAnswer,answer,incorrectCount):
     #This will take the answer and return if its correct or not
-
-def checkStep(stepsForMaze,incorrectStepsForMaze,motorTimeForCorrectSteps,motorTimeForIncorrectSteps):
-    #This updates the step of how long the robot needs to run
-    #This will hold a correct and incorrect method
-    if validateQuestion() == True:
-        step = stepsForMaze[stepNum]
-        time =  motorTimeForCorrectSteps[stepNum]
-        sendMotorMethods()
+    if userAnswer == answer:
+        print("You are correct!")
+        checkStep(stepsForMaze,motorTimeForSteps)
     else:
-        step = incorrectStepsForMaze[stepNum]
-        time = motorTimeForIncorrectSteps[stepNum]
-        sendMotorMethods()
+        print("Better luck next time!")
+        incorrectCount += 1
+        displayQuestion(choice,mathQuestions,scienceQuestions,englishQuestions)
 
-def sendMotorMethods(step,time):
+
+def checkStep(stepsForMaze,motorTimeForSteps):
+    step = stepsForMaze[stepNum]
+    time =  motorTimeForCorrectSteps[stepNum]
+    sendMotorMethods(step,time,stepNum)
+
+def sendMotorMethods(step,time,stepNum):
     UDP_IP = "127.0.0.1"
     UDP_PORT = 5005
 
@@ -88,4 +98,6 @@ def sendMotorMethods(step,time):
     data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
 
     if data == "Finished":
-        displayQuestion()
+        stepNum += 1
+        displayQuestion(choice,mathQuestions,scienceQuestions,englishQuestions)
+intro()
