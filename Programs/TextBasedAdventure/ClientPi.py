@@ -33,4 +33,5 @@ while True:
     step, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
     time, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
     time = int(time)
+    step = step.decode(encoding='UTF-8',errors='strict')
     runMotors.getDriveCommand(step,time)
