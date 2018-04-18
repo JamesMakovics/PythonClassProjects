@@ -7,22 +7,6 @@ GPIO.setmode(GPIO.BCM)
 import socket
 import runMotors
 import robotControlMethods
-'''
-Setup of GPIO
-'''
-
-MotorLeftBackward = 17 #in pin 11 on RPI 3
-MotorLeftForward = 27 #in pin 13 on RPI 3
-MotorRightForward = 22 #in pin 15 on RPI 3
-MotorRightBackward = 23 #in pin 16 on RPI 3
-
-'''
-Init the GPIO pins
-'''
-GPIO.setup(MotorLeftForward, GPIO.OUT)
-GPIO.setup(MotorLeftBackward, GPIO.OUT)
-GPIO.setup(MotorRightForward, GPIO.OUT)
-GPIO.setup(MotorRightBackward, GPIO.OUT)
 
 UDP_IP = "192.168.1.30"
 UDP_PORT = 5005
