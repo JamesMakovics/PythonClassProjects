@@ -99,5 +99,6 @@ def sendMotorMethods(step,time,stepNum):
     sock.sendto(str(step).encode('utf-8'), address)
     sock.sendto(str(time).encode('utf-8'), address)
 
+    stepNum = stepNum + 1
     displayQuestion(mathQuestions,scienceQuestions,englishQuestions)
 intro()
