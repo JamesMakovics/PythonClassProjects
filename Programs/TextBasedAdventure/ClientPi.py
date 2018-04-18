@@ -1,5 +1,6 @@
 import socket
 import runMotors
+import robotControlMethods
 
 UDP_IP = "192.168.1.30"
 UDP_PORT = 5005
@@ -11,5 +12,5 @@ while True:
     time = int(time)
     runMotors.getDriveCommand(step,time)
 
-    if runMotors.isFinished() == True:
+    if robotControlMethods.isFinished() == True:
         sock.sendto(b"Finished")
