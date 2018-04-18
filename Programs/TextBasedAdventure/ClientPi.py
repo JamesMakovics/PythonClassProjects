@@ -14,4 +14,4 @@ while True:
     runMotors.getDriveCommand(step,time)
 
     if robotControlMethods.isFinished() == True:
-        sock.send(b"Finished")
+        sock.send(b"Finished",addr)
