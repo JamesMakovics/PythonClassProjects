@@ -86,11 +86,13 @@ def validateQuestion(userAnswer,answer,incorrectCount):
 
 
 def checkStep(stepsForMaze,motorTimeForSteps):
+    global stepNum
     step = stepsForMaze[stepNum]
     time =  motorTimeForSteps[stepNum]
-    sendMotorMethods(step,time,stepNum)
+    sendMotorMethods(step,time)
 
-def sendMotorMethods(step,time,stepNum):
+def sendMotorMethods(step,time):
+    global stepNum
     UDP_IP = "192.168.1.30" #This is the ip of the Pi
     UDP_PORT = 5005 #This is the port it connects over
     address = UDP_IP, UDP_PORT
