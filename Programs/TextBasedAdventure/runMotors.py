@@ -8,7 +8,7 @@ def getDriveCommand(step,time):
         robotControlMethods.Backward(time)
 
     elif step == 'left':
-        robotControlMethods.left(time)
+        robotControlMethods.Left(time)
 
     elif step == 'right':
-        robotControlMethods.right(time)
+        robotControlMethods.Right(time)
