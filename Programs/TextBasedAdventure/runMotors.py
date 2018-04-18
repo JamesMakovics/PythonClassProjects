@@ -1,13 +1,14 @@
+import robotControlMethods
 
 def getDriveCommand(step,time):
     if step == 'forward':
-        (time)
+        robotControlMethods.Forward(time)
 
     elif step == 'backwards':
-        Backward(time)
+        robotControlMethods.Backward(time)
 
     elif step == 'left':
-        left(time)
+        robotControlMethods.left(time)
 
     elif step == 'right':
-        right(time)
+        robotControlMethods.right(time)
