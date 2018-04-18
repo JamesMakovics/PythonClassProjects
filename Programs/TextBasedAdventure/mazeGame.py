@@ -5,6 +5,7 @@ import random
 import time
 stepNum = 0
 incorrectCount = 0
+choice = ""
 
 stepsForMaze = ["forward"] #Just a place holder
 motorTimeForSteps = [1,1] #Just a place holder
@@ -29,6 +30,7 @@ def runGame():
         return False
 
 def intro():
+    global choice
     print("Hello")
     time.sleep(.5)
     print("Welcome to MazeCraze")
@@ -48,10 +50,11 @@ def intro():
             print()
             print("Please enter: \nMath\nScience\nEnglish")
 
-    displayQuestion(choice,mathQuestions,scienceQuestions,englishQuestions)
+    displayQuestion(mathQuestions,scienceQuestions,englishQuestions)
 
-def displayQuestion(choice,mathQuestions,scienceQuestions,englishQuestions):
+def displayQuestion(mathQuestions,scienceQuestions,englishQuestions):
     print()
+    global choice
     randNum = random.randint(0,0)
     if choice == "science":
         question = scienceQuestions[randNum]
@@ -96,5 +99,5 @@ def sendMotorMethods(choice,step,time,stepNum):
     sock.sendto(str(step).encode('utf-8'), address)
     sock.sendto(str(time).encode('utf-8'), address)
 
-    displayQuestion(choice,mathQuestions,scienceQuestions,englishQuestions)
+    displayQuestion(mathQuestions,scienceQuestions,englishQuestions)
 intro()
