@@ -97,7 +97,7 @@ def checkStep(stepsForMaze,motorTimeForSteps):
 
 def sendMotorMethods(step,time):
     global stepNum
-    UDP_IP = "10.120.98.208" #This is the ip of the Pi
+    UDP_IP = "10.120.98.209" #This is the ip of the Pi
     UDP_PORT = 5005 #This is the port it connects over
     address = UDP_IP, UDP_PORT
     sock = socket.socket(socket.AF_INET, # Internet
