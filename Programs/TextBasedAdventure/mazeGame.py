@@ -37,7 +37,9 @@ def intro():
     time.sleep(.5)
     print("You will need to answer questions in order to move the robot")
     time.sleep(.5)
-    print("You have three topics to choose from:")
+    print("You have 5 guesses that you can use!")
+    time.sleep(.5)
+    print("You have two topics to choose from:")
     print("Math")
     print("Science")
     while True:
@@ -47,13 +49,17 @@ def intro():
             break
         else:
             print()
-            print("Please enter: \nMath\nScience\nEnglish")
+            print("Please enter: \nMath\nScience")
 
     displayQuestion(mathQuestions,scienceQuestions)
 
 def displayQuestion(mathQuestions,scienceQuestions):
     print()
     global choice
+    global gameFinished
+    global incorrectCount
+    if gameFinished == True or incorrectCount == 5:
+        gameover()
     randNum = random.randint(0,9)
     if choice == "science":
         question = scienceQuestions[randNum]
@@ -89,6 +95,7 @@ def checkStep(stepsForMaze,motorTimeForSteps):
 
 def sendMotorMethods(step,time):
     global stepNum
+    global gameFinished
     UDP_IP = "10.120.98.209" #This is the ip of the Pi
     UDP_PORT = 5005 #This is the port it connects over
     address = UDP_IP, UDP_PORT
@@ -98,5 +105,14 @@ def sendMotorMethods(step,time):
     sock.sendto(str(time).encode('utf-8'), address)
 
     stepNum = stepNum + 1
+    if(stepNum == stepsForMaze.length()):
+        gameFinished = True
     displayQuestion(mathQuestions,scienceQuestions)
+
+def gameover():
+    global gameFinished
+    if gameFinished == True and incorrectCount < 5:
+        print("Congratulations you have beaten the maze!")
+    else:
+        print("Sorry you have reached 5 incorrect answers. Goodbye.")
 intro()
