@@ -11,8 +11,8 @@ stepNum = 0
 incorrectCount = 0
 choice = ""
 
-stepsForMaze = ["forward","left"] #Just a place holder
-motorTimeForSteps = [1,1] #Just a place holder
+stepsForMaze = ["forward","left","right","backwards","forward","forward","backwards","left","right"] #Just a place holder
+motorTimeForSteps = [1,1,1,1,1,1,1,1,1,1] #Just a place holder
 
 
 mathQuestions = ["Whats 9+10?","Find the value of 3x+9=0","Simplify: (x+4)*(2x+5) (Use '^' as an exponent)","What is 29²?","5(4x+11)+3(2x+4)=347\nx=?","What is 8³?","What is the units digit of 8 to the 97th?","2⁻³","1+1=?","46*12=?"]
