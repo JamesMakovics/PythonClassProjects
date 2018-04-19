@@ -49,9 +49,9 @@ def intro():
             print()
             print("Please enter: \nMath\nScience\nEnglish")
 
-    displayQuestion(mathQuestions,scienceQuestions,englishQuestions)
+    displayQuestion(mathQuestions,scienceQuestions)
 
-def displayQuestion(mathQuestions,scienceQuestions,englishQuestions):
+def displayQuestion(mathQuestions,scienceQuestions):
     print()
     global choice
     randNum = random.randint(0,9)
@@ -98,5 +98,5 @@ def sendMotorMethods(step,time):
     sock.sendto(str(time).encode('utf-8'), address)
 
     stepNum = stepNum + 1
-    displayQuestion(mathQuestions,scienceQuestions,englishQuestions)
+    displayQuestion(mathQuestions,scienceQuestions)
 intro()
