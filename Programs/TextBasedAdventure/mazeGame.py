@@ -3,6 +3,10 @@ import pygame
 import socket
 import random
 import time
+import vlc
+
+smellsLikeTeenSpirit = vlc.MediaPlayer("C:/Users/zjmakovi/OneDrive for Business/CompSci/Python Class/Smells Like Teen Spirit 8bit.mp3")
+smellsLikeTeenSpirit.play()
 stepNum = 0
 incorrectCount = 0
 choice = ""
@@ -11,11 +15,11 @@ stepsForMaze = ["forward"] #Just a place holder
 motorTimeForSteps = [1,1] #Just a place holder
 
 
-mathQuestions = ["Whats 9+10?","Find the value of 3x+9=0","What is the factor of 3x^2+6x+3","","",""]
-mathAnswers = ["21","3",]
+mathQuestions = ["Whats 9+10?","Find the value of 3x+9=0","Simplify: (x+4)*(2x+5) (Use '^' as an exponent)","What is 29²?","5(4x+11)+3(2x+4)=347\nx=?","What is 8³?","What is the units digit of 8 to the 97th?","2⁻³","1+1=?","46*12=?"]
+mathAnswers = ["19","3","2x^2+13x+20","841","11","512","8","1/8","2","552"]
 
-scienceQuestions = [1,1]
-scienceAnswers = [1,1]
+scienceQuestions = ["What is the closest star to our own sun?","Betelgeuse and Rigel are the two giant stars in which constellation?","In our solar system, which planet has the shortest day?","Which gland in the human body regulates metabolism?","What common kitchen item is made up of sodium and chlorine atoms?","What is the name for the specialized nerve cell that transmits information chemically and electrically throughout the body?","What is the name for the disc-shaped region of icy bodies that extends from Neptune to about 55 astronomical units from the Sun?","In our solar system which two planets are known as ice giants?"]
+scienceAnswers = ["Proxima Centauri","Orion","Jupiter","Thyroid","Salt","Neuron","The Kuiper Belt","Uranus and Neptune"]
 
 englishQuestions = [1,1]
 englishAnswers = [1,1]
@@ -76,7 +80,7 @@ def displayQuestion(mathQuestions,scienceQuestions,englishQuestions):
 
 def validateQuestion(userAnswer,answer,incorrectCount):
     #This will take the answer and return if its correct or not
-    if userAnswer == answer:
+    if userAnswer.lower() == answer.lower():
         print("You are correct!")
         checkStep(stepsForMaze,motorTimeForSteps)
     else:
@@ -93,7 +97,7 @@ def checkStep(stepsForMaze,motorTimeForSteps):
 
 def sendMotorMethods(step,time):
     global stepNum
-    UDP_IP = "192.168.1.30" #This is the ip of the Pi
+    UDP_IP = "10.120.98.208" #This is the ip of the Pi
     UDP_PORT = 5005 #This is the port it connects over
     address = UDP_IP, UDP_PORT
     sock = socket.socket(socket.AF_INET, # Internet

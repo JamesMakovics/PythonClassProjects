@@ -8,7 +8,7 @@ import socket
 import runMotors
 import robotControlMethods
 
-UDP_IP = "192.168.1.30"
+UDP_IP = "10.120.98.208" #Home ip 192.168.1.30
 UDP_PORT = 5005
 address = UDP_IP,UDP_PORT
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
