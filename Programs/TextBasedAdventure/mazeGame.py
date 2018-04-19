@@ -1,4 +1,5 @@
 #This manages the game from the client side
+import sys
 import pygame
 import socket
 import random
@@ -37,7 +38,7 @@ def intro():
     time.sleep(.5)
     print("You will need to answer questions in order to move the robot")
     time.sleep(.5)
-    print("You have 5 guesses that you can use!")
+    print("You only have 5 guesses!")
     time.sleep(.5)
     print("You have two topics to choose from:")
     print("Math")
@@ -45,7 +46,7 @@ def intro():
     while True:
         choice = str(input("Please enter a topic: "))
         print(choice)
-        if choice == "science" or "math":
+        if choice == "science" or choice == "math":
             break
         else:
             print()
@@ -74,10 +75,11 @@ def displayQuestion(mathQuestions,scienceQuestions):
         time.sleep(1)
     print()
     userAnswer = str(input(question + ": "))
-    validateQuestion(userAnswer,answer,incorrectCount)
+    validateQuestion(userAnswer,answer)
 
-def validateQuestion(userAnswer,answer,incorrectCount):
+def validateQuestion(userAnswer,answer):
     #This will take the answer and return if its correct or not
+    global incorrectCount
     if userAnswer.lower() == answer.lower():
         print("You are correct!")
         checkStep(stepsForMaze,motorTimeForSteps)
@@ -96,6 +98,7 @@ def checkStep(stepsForMaze,motorTimeForSteps):
 def sendMotorMethods(step,time):
     global stepNum
     global gameFinished
+    global stepsForMaze
     UDP_IP = "10.120.98.209" #This is the ip of the Pi
     UDP_PORT = 5005 #This is the port it connects over
     address = UDP_IP, UDP_PORT
@@ -105,14 +108,18 @@ def sendMotorMethods(step,time):
     sock.sendto(str(time).encode('utf-8'), address)
 
     stepNum = stepNum + 1
-    if(stepNum == stepsForMaze.length()):
+    if stepNum == len(stepsForMaze):
         gameFinished = True
+
     displayQuestion(mathQuestions,scienceQuestions)
 
 def gameover():
     global gameFinished
+    global incorrectCount
     if gameFinished == True and incorrectCount < 5:
         print("Congratulations you have beaten the maze!")
+        sys.exit()
     else:
         print("Sorry you have reached 5 incorrect answers. Goodbye.")
+        sys.exit()
 intro()
