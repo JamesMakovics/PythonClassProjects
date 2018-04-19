@@ -78,7 +78,7 @@ def validateQuestion(userAnswer,answer,incorrectCount):
     else:
         print("Better luck next time!")
         incorrectCount += 1
-        displayQuestion(mathQuestions,scienceQuestions,englishQuestions)
+        displayQuestion(mathQuestions,scienceQuestions)
 
 
 def checkStep(stepsForMaze,motorTimeForSteps):
