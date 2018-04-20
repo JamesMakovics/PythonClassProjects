@@ -16,6 +16,6 @@ sock.bind((UDP_IP, UDP_PORT))
 while True:
     step, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
     time, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
-    methodTime = int(time)
+    methodTime = float(time)
     step = step.decode(encoding='UTF-8',errors='strict')
     runMotors.getDriveCommand(step,methodTime)
