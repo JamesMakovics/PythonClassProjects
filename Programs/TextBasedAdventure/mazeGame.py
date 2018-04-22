@@ -12,8 +12,8 @@ stepNum = 0
 incorrectCount = 0
 choice = ""
 
-stepsForMaze = ["forward","left", "forward","left", "backwards","right","forward","right","forward","left","forward", "right"] #may need to fix when wheels are glued
-motorTimeForSteps = [.43,.5, .03,.4, .4, .5, .3,.3,1,1,1,1,1] #Need to fix values when wheels are glued
+stepsForMaze = ["forward","left", "forward","left","right","forward","right","forward","left","forward", "right"] #may need to fix when wheels are glued
+motorTimeForSteps = [.6,.5, .05,.4, .4, .1,.3,1,1,1,1,1] #Need to fix values when wheels are glued
 
 
 mathQuestions = ["Whats 9+10?","Find the value of 3x+9=0","Simplify: (x+4)*(2x+5) (Use '^' as an exponent)","What is 29²?","5(4x+11)+3(2x+4)=347\nx=?","What is 8³?","What is the units digit of 8 to the 97th?","2⁻³","1+1=?","46*12=?"]
@@ -61,7 +61,7 @@ def displayQuestion(mathQuestions,scienceQuestions):
     global incorrectCount
     if gameFinished == True or incorrectCount == 5:
         gameover()
-    randNum = random.randint(0,9)
+    randNum = random.randint(0,0)
     if choice == "science":
         question = scienceQuestions[randNum]
         answer = scienceAnswers[randNum]
@@ -99,7 +99,7 @@ def sendMotorMethods(step,time):
     global stepNum
     global gameFinished
     global stepsForMaze
-    UDP_IP = "10.120.98.209" #This is the ip of the Pi School ip: 10.120.98.209
+    UDP_IP = "192.168.1.30" #This is the ip of the Pi School ip: 10.120.98.209
     UDP_PORT = 5005 #This is the port it connects over
     address = UDP_IP, UDP_PORT
     sock = socket.socket(socket.AF_INET, # Internet
