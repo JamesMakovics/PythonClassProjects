@@ -16,4 +16,4 @@ sock.bind((UDP_IP, UDP_PORT))
 while True:
     move, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
     step = step.decode(encoding='UTF-8',errors='strict')
-    runMotors.getDriveCommand(move)
+    setMotors.getDriveCommand(move)
