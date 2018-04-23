@@ -70,6 +70,11 @@ print("Up Arrow -> moves robot forward")
 print("Down Arrow -> moves robot backward")
 print("Left Arrow -> moves robot left")
 print("Right Arrow -> moves robot right")
+UDP_IP = "10.120.98.209" #This is the ip of the Pi School ip: 10.120.98.209
+UDP_PORT = 5005 #This is the port it connects over
+address = UDP_IP, UDP_PORT
+sock = socket.socket(socket.AF_INET, # Internet
+                 socket.SOCK_DGRAM) # UDP
 
 try:
     while True:
@@ -83,13 +88,14 @@ try:
                 if event.key == pygame.K_ESCAPE: #Quits the program
                     break
                 elif event.key == pygame.K_UP: #Moves Robot forward
+                sock.sendto(str(move).encode('utf-8'), address)
                     Forward()
                 elif event.key == pygame.K_DOWN: #Moves Robot Backwards
                     Backward()
                 elif event.key == pygame.K_LEFT:
-                    Left()
-                elif event.key == pygame.K_RIGHT:
                     Right()
+                elif event.key == pygame.K_RIGHT:
+                    Left()
             else:
                 Stop()
 finally:
