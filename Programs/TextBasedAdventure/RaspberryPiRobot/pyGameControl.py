@@ -88,15 +88,19 @@ try:
                 if event.key == pygame.K_ESCAPE: #Quits the program
                     break
                 elif event.key == pygame.K_UP: #Moves Robot forward
-                sock.sendto(str(move).encode('utf-8'), address)
-                    Forward()
+                    move = Forward
+                    sock.sendto(str(move).encode('utf-8'), address)
                 elif event.key == pygame.K_DOWN: #Moves Robot Backwards
-                    Backward()
+                    move = Backward
+                    sock.sendto(str(move).encode('utf-8'), address)
                 elif event.key == pygame.K_LEFT:
-                    Right()
+                    move = Right
+                    sock.sendto(str(move).encode('utf-8'), address)
                 elif event.key == pygame.K_RIGHT:
-                    Left()
+                    move = Left
+                    sock.sendto(str(move).encode('utf-8'), address)
             else:
-                Stop()
+                move = Stop
+                sock.sendto(str(move).encode('utf-8'), address)
 finally:
     GPIO.cleanup()
