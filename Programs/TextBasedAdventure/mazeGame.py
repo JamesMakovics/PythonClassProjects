@@ -6,7 +6,7 @@ import random
 import time
 import vlc
 
-smellsLikeTeenSpirit = vlc.MediaPlayer("C:/Users/zjmakovi/OneDrive for Business/CompSci/Python Class/Smells Like Teen Spirit 8bit.mp3")
+smellsLikeTeenSpirit = vlc.MediaPlayer("C:/Users/zjmakovi/OneDrive - Hatboro-Horsham School District/CompSci/Python Class/Smells Like Teen Spirit 8bit.mp3")
 smellsLikeTeenSpirit.play()
 stepNum = 0
 incorrectCount = 0
