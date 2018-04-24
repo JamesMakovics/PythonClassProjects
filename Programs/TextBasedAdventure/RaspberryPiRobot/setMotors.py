@@ -12,3 +12,6 @@ def getDriveCommand(move):
 
     elif move == 'Right':
         robotControllerMethods.Right()
+
+    elif move == 'Stop':
+        robotControllerMethods.Stop()
