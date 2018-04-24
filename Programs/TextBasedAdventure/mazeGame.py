@@ -17,7 +17,7 @@ motorTimeForSteps = [.6,.5, .05,.4, .4, .1,.3,.4,.3,.4,.3,.2] #Need to fix value
 
 
 mathQuestions = ["Whats 9+10?","Find the value of 3x+9=0","21 + 3 = ?","21-4 =?","What is 8³?","What is the units digit of 8 to the 97th?","2⁻³","1+1=?","46*12=?"]
-mathAnswers = ["19","3","24","841","17","512","8","1/8","2","552"]
+mathAnswers = ["19","3","24","17","841","512","8","1/8","2","552"]
 
 scienceQuestions = ["What is the closest star to our own sun?","Betelgeuse and Rigel are the two giant stars in which constellation?","In our solar system, which planet has the shortest day?","Which gland in the human body regulates metabolism?","What common kitchen item is made up of sodium and chlorine atoms?","What is the name for the specialized nerve cell that transmits information chemically and electrically throughout the body?","What is the name for the disc-shaped region of icy bodies that extends from Neptune to about 55 astronomical units from the Sun?","In our solar system which two planets are known as ice giants?","Penicillin was discovered in 1928 by which Scottish scientist?","Bronze is an alloy consisting primarily of what two elements?"]
 scienceAnswers = ["Proxima Centauri","Orion","Jupiter","Thyroid","Salt","Neuron","The Kuiper Belt","Uranus and Neptune","Sir Alexander Fleming","Copper and Tin"]
@@ -99,7 +99,7 @@ def sendMotorMethods(step,time):
     global stepNum
     global gameFinished
     global stepsForMaze
-    UDP_IP = "10.120.98.209" #This is the ip of the Pi School ip: 10.120.98.209
+    UDP_IP = "10.120.100.0" #This is the ip of the Pi School ip: 10.120.98.209
     UDP_PORT = 5005 #This is the port it connects over
     address = UDP_IP, UDP_PORT
     sock = socket.socket(socket.AF_INET, # Internet

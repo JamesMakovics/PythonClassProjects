@@ -4,7 +4,7 @@ def getDriveCommand(move):
     if move == 'Forward':
         robotControllerMethods.Forward()
 
-    elif move == 'Backwards':
+    elif move == 'Backward':
         robotControllerMethods.Backward()
 
     elif move == 'Left':
