@@ -7,8 +7,8 @@ import zeros
 import nameValidation
 
 s = "Hello"
-sub = "Hello"
-sub2 = "Hello"
+sub = "lo"
+sub2 = "He"
 test = "GOodbye"
 strOfDigits = "1 @ 31 $$2***"
 leadingTest = "0000000000123354325234523"
