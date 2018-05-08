@@ -1,73 +1,37 @@
-#function – a set of code that can be called multiple times
+'''
+while loop – A control statment that repeats until a condition is met
 
 
-#function call – an object that can accept arguments
+loop body – Where the method is repeated until the condition is met
 
 
-#def – creates a function reference
+iteration – Repeating the same code until a condtion is met
 
 
-#function definition – an executable statement
+infinite loop – A control statment that repats forever
 
 
-#block – a piece of code that is executed as a unit
+loop variable – A variable that controls when the loop is broken
 
 
-#return – an output that can be interpreted by other statements
+counter – A variable that increases with the number of times a loop body is run
 
 
-#parameter – an input that is acccepted into a function
+break – Gets the loop to stop where the loop condition does not have to be met
 
 
-#argument - parameters that are accepted by an object
-
-
-#return statement – a statement that can be returned to a method or another object
-
-
-#none - a null equivalent
+Continue – Keeps the program running after a 'if' statement is run
 
 '''
-Please provide 2 examples of a function and a function call.
-One function should take 2 parameters and one should have no parameters.
-Write or type the code below:
-'''
+user_number = int(input("Enter a number: ")) #Counts from the number the user had entered to 100
 
-#F2C
-F_temp_list = []
-C_temp_list = []
-temps_count = 0
-def valid_input():
-    global temps_count
-    while temps_count < 5:
-        try:
-            user_temp_F = int(input("Enter a temperature in Fahrenheit: "))
-            f2c(user_temp_F)
-        except ValueError:
-            print("Please try again!")
-            valid_input();
-    organize_list(C_temp_list, F_temp_list)
-def f2c(user_temp_F):
-    global temps_count
-    global F_temp_list
-    global C_temp_list
-    user_temp_C = (user_temp_F - 32) * 5/9
-    user_temp_C = round(user_temp_C,2)
-    C_temp_list.append(user_temp_C)
-    F_temp_list.append(user_temp_F)
-    temps_count += 1
+while(user_number < 100):
+    if user_number >= 100:
+        break
+    else:
+        user_number += 1
 
-def organize_list(C_temp_list, F_temp_list):
-    C_temp_list = sorted(C_temp_list, key=int)
-    F_temp_list = sorted(F_temp_list, key=int)
-    print_table(C_temp_list,F_temp_list)
-
-
-def print_table(C_temp_list, F_temp_list):
-    count = 0
-    print("F        C")
-    while count < len(C_temp_list):
-        print(F_temp_list[count],"  ",C_temp_list[count])
-        count += 1
-
-valid_input()
+if user_number > 100:
+    print("The number ", user_number, " was ", user_number - 100, " Higher than 100")
+else:
+    print("The number you entered is now ", user_number)
