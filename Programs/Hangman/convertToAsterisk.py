@@ -1,9 +1,14 @@
 #Converts the secret word to asterisks
 
 def replace_with_asterisks(s):
+    import Hangman
+    import letterCorrect
+    newStr = ""
     for letters in s:
         if letters == "-":
-            pass
+            newStr += "-"
+        elif letters in letterCorrect.guessedLetters:
+            newStr += letters
         else:
-            letters = "*"
-    return s
+            newStr += "*"
+    return newStr
