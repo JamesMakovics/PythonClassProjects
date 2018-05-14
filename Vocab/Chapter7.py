@@ -40,5 +40,7 @@ all() - Returns true when all elements in iterable is true
 slicing - Returns sublists at specified indexes
 
 '''
-
 #Provide an example of a for loop in Python
+letters = ["A","B","C"]
+for x in letters:
+    print(letters[x])
