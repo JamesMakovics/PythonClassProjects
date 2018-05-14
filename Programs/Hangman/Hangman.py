@@ -77,90 +77,90 @@ class Application(tk.Frame):
     def get_letters(self,master):
         import letterCorrect
         #First row
-        self.A_button = tk.Button(master, text="A", fg="black",command =lambda: self.sendToLetterCorrect("A"))
+        self.A_button = tk.Button(master, text="A", fg="black",command =lambda: self.check_guess("A"))
         self.A_button.place(x = 150, y = 280)
 
-        self.B_button = tk.Button(master, text="B", fg="black",command =lambda: self.sendToLetterCorrect("B"))
+        self.B_button = tk.Button(master, text="B", fg="black",command =lambda: self.check_guess("B"))
         self.B_button.place(x = 185, y = 280)
 
-        self.C_button = tk.Button(master, text="C", fg="black",command =lambda: self.sendToLetterCorrect("C"))
+        self.C_button = tk.Button(master, text="C", fg="black",command =lambda: self.check_guess("C"))
         self.C_button.place(x = 220, y = 280)
 
-        self.D_button = tk.Button(master, text="D", fg="black",command =lambda: self.sendToLetterCorrect("D"))
+        self.D_button = tk.Button(master, text="D", fg="black",command =lambda: self.check_guess("D"))
         self.D_button.place(x = 255, y = 280)
 
-        self.E_button = tk.Button(master, text="E", fg="black",command =lambda: self.sendToLetterCorrect("E"))
+        self.E_button = tk.Button(master, text="E", fg="black",command =lambda: self.check_guess("E"))
         self.E_button.place(x = 290, y = 280)
 
-        self.F_button = tk.Button(master, text="F", fg="black",command =lambda: self.sendToLetterCorrect("F"))
+        self.F_button = tk.Button(master, text="F", fg="black",command =lambda: self.check_guess("F"))
         self.F_button.place(x = 325, y = 280)
 
-        self.G_button = tk.Button(master, text="G", fg="black",command =lambda: self.sendToLetterCorrect("G"))
+        self.G_button = tk.Button(master, text="G", fg="black",command =lambda: self.check_guess("G"))
         self.G_button.place(x = 360, y = 280)
 
-        self.H_button = tk.Button(master, text="H", fg="black",command =lambda: self.sendToLetterCorrect("H"))
+        self.H_button = tk.Button(master, text="H", fg="black",command =lambda: self.check_guess("H"))
         self.H_button.place(x = 395, y = 280)
 
-        self.I_button = tk.Button(master, text="I", fg="black",command =lambda: self.sendToLetterCorrect("I"))
+        self.I_button = tk.Button(master, text="I", fg="black",command =lambda: self.check_guess("I"))
         self.I_button.place(x = 430, y = 280)
 
-        self.J_button = tk.Button(master, text="J", fg="black",command =lambda: self.sendToLetterCorrect("J"))
+        self.J_button = tk.Button(master, text="J", fg="black",command =lambda: self.check_guess("J"))
         self.J_button.place(x = 465, y = 280)
 
-        self.K_button = tk.Button(master, text="K", fg="black",command =lambda: self.sendToLetterCorrect("K"))
+        self.K_button = tk.Button(master, text="K", fg="black",command =lambda: self.check_guess("K"))
         self.K_button.place(x = 500, y = 280)
 
         #Second row
 
-        self.L_button = tk.Button(master, text="L", fg="black",command =lambda: self.sendToLetterCorrect("L"))
+        self.L_button = tk.Button(master, text="L", fg="black",command =lambda: self.check_guess("L"))
         self.L_button.place(x = 170, y = 320)
 
-        self.M_button = tk.Button(master, text="M", fg="black",command =lambda: self.sendToLetterCorrect("M"))
+        self.M_button = tk.Button(master, text="M", fg="black",command =lambda: self.check_guess("M"))
         self.M_button.place(x = 205, y = 320)
 
-        self.N_button = tk.Button(master, text="N", fg="black",command =lambda: self.sendToLetterCorrect("N"))
+        self.N_button = tk.Button(master, text="N", fg="black",command =lambda: self.check_guess("N"))
         self.N_button.place(x = 240, y = 320)
 
-        self.O_button = tk.Button(master, text="O", fg="black",command =lambda: self.sendToLetterCorrect("O"))
+        self.O_button = tk.Button(master, text="O", fg="black",command =lambda: self.check_guess("O"))
         self.O_button.place(x = 275, y = 320)
 
-        self.P_button = tk.Button(master, text="P", fg="black",command =lambda: self.sendToLetterCorrect("P"))
+        self.P_button = tk.Button(master, text="P", fg="black",command =lambda: self.check_guess("P"))
         self.P_button.place(x = 310, y = 320)
 
-        self.Q_button = tk.Button(master, text="Q", fg="black",command =lambda: self.sendToLetterCorrect("Q"))
+        self.Q_button = tk.Button(master, text="Q", fg="black",command =lambda: self.check_guess("Q"))
         self.Q_button.place(x = 345, y = 320)
 
-        self.R_button = tk.Button(master, text="R", fg="black",command =lambda: self.sendToLetterCorrect("R"))
+        self.R_button = tk.Button(master, text="R", fg="black",command =lambda: self.check_guess("R"))
         self.R_button.place(x = 380, y = 320)
 
-        self.S_button = tk.Button(master, text="S", fg="black",command =lambda: self.sendToLetterCorrect("S"))
+        self.S_button = tk.Button(master, text="S", fg="black",command =lambda: self.check_guess("S"))
         self.S_button.place(x = 415, y = 320)
 
-        self.T_button = tk.Button(master, text="T", fg="black",command =lambda: self.sendToLetterCorrect("T"))
+        self.T_button = tk.Button(master, text="T", fg="black",command =lambda: self.check_guess("T"))
         self.T_button.place(x = 450, y = 320)
 
-        self.U_button = tk.Button(master, text="U", fg="black",command =lambda: self.sendToLetterCorrect("U"))
+        self.U_button = tk.Button(master, text="U", fg="black",command =lambda: self.check_guess("U"))
         self.U_button.place(x = 485, y = 320)
 
         #Third row
 
-        self.V_button = tk.Button(master, text="V", fg="black",command =lambda: self.sendToLetterCorrect("V"))
+        self.V_button = tk.Button(master, text="V", fg="black",command =lambda: self.check_guess("V"))
         self.V_button.place(x = 260, y = 360)
 
-        self.W_button = tk.Button(master, text="W", fg="black",command =lambda: self.sendToLetterCorrect("W"))
+        self.W_button = tk.Button(master, text="W", fg="black",command =lambda: self.check_guess("W"))
         self.W_button.place(x = 295, y = 360)
 
-        self.X_button = tk.Button(master, text="X", fg="black",command =lambda: self.sendToLetterCorrect("X"))
+        self.X_button = tk.Button(master, text="X", fg="black",command =lambda: self.check_guess("X"))
         self.X_button.place(x = 330, y = 360)
 
-        self.Y_button = tk.Button(master, text="Y", fg="black",command =lambda: self.sendToLetterCorrect("Y"))
+        self.Y_button = tk.Button(master, text="Y", fg="black",command =lambda: self.check_guess("Y"))
         self.Y_button.place(x = 365, y = 360)
 
-        self.Z_button = tk.Button(master, text="Z", fg="black",command =lambda: self.sendToLetterCorrect("Z"))
+        self.Z_button = tk.Button(master, text="Z", fg="black",command =lambda: self.check_guess("Z"))
         self.Z_button.place(x = 400, y = 360)
 
 
-    def sendToLetterCorrect(self,s):
+    def check_guess(self,s):
         import letterCorrect
         global drawStep
         global drawStep
@@ -224,8 +224,7 @@ class Application(tk.Frame):
         self.Z_button.place_forget()
         self.intro.place_forget()
         self.letter_selection.place_forget()
-        self.game_over_text = tk.Label(text="Game Over", fg="red", font=("Helvetica", 16))
-        self.game_over_text.place(x = 310, y = 320)
+
 
     def create_letter_already_chosen(self):
         self.letter_already_chosen = tk.Label(text="You have already chosen that letter", fg="red", font=("Helvetica", 16))
@@ -239,13 +238,25 @@ class Application(tk.Frame):
 
     def game_over(self):
         self.clear_all_buttons()
+        self.game_over_text = tk.Label(text="Game Over", fg="red", font=("Helvetica", 25))
+        self.game_over_text.place(x = 310, y = 320)
 
+    def player_won(self):
+        self.clear_all_buttons()
+        self.image_six_display()
+        self.win_text = tk.Label(text="You Win!!!", fg="green", font=("Helvetica", 25))
+        self.win_text.place(x = 310, y = 320)
 
     def check_game_over(self):
+        import convertToAsterisk
+        global secretWord
         global drawStep
         if drawStep == 5:
             self.image_six_display()
             self.game_over()
+
+        elif secretWord == convertToAsterisk.replace_with_asterisks(secretWord):
+            self.player_won()
 
         elif drawStep == 1:
             self.image_two_display()

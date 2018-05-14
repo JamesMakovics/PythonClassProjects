@@ -6,7 +6,6 @@ def is_letter_correct(s):
     import secretWords
     import Hangman
     global guessedLetters
-    print(guessedLetters)
     if s in Hangman.secretWord and s not in guessedLetters:
         guessedLetters.append(s)
         return "correct"
