@@ -41,6 +41,8 @@ slicing - Returns sublists at specified indexes
 
 '''
 #Provide an example of a for loop in Python
-letters = ["A","B","C"]
-for x in letters:
-    print(letters[x])
+newNum = 0
+nums = [0,1,2,3]
+for numbers in nums:
+    newNum += nums[numbers]
+print(newNum)
